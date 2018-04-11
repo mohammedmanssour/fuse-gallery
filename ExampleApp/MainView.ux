@@ -1,0 +1,24 @@
+<App Model="App">
+    <ClientPanel>
+        <DockPanel>
+            <Panel Dock="Top" Height="100" HitTestMode="LocalBoundsAndChildren" Clicked="{selectImages}">
+                <Text FontSize="20" Alignment="Center">Select Images From Gallery</Text>
+            </Panel>
+            <ScrollView Dock="Fill">
+
+                <StackPanel>
+                    <Text Margin="0,20" Value="Images Selected: {images_count}" TextAlignment="Center" FontSize="20" />
+                    <Grid Columns="1*,1*" CellSpacing="10" Padding="20">
+                        <Each Items="{images}">
+                            <Panel Height="150">
+                                <Image File="{url}" StretchMode="UniformToFill"/>
+                            </Panel>
+                        </Each>
+                    </Grid>
+
+                </StackPanel>
+
+            </ScrollView>
+        </DockPanel>
+    </ClientPanel>
+</App>
